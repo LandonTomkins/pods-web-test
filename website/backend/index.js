@@ -14,6 +14,10 @@ const db = mysql.createPool({
     database: 'parkingLots',
 });
 
+app.get('/', (req,res) => {
+    res.send("API is running")
+})
+
 app.get('/get', (req, res) => {
     // THIS GETS THE INFORMATION IF YOU WANT DIFFERENT INFO CHANGE THE SQL QUERY
     const SQL = "SELECT SUM(CurrentSpacesFaculty+CurrentSpacesStudent+CurrentSpacesHandicapped+CurrentSpacesVisitor) AS total FROM ParkingLot2 GROUP BY Datetime;"
@@ -32,5 +36,5 @@ app.get('/current', (req, res) => {
     })
 })
 
-
-app.listen(3001, () => console.log("server started on port 3001"))
+module.exports = app
+//app.listen(3001, () => console.log("server started on port 3001"))
