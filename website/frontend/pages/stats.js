@@ -13,7 +13,7 @@ function Bar() {
     const [backendData, setBackendData] = useState([{}])
 
     useEffect(() => {
-            Axios.get('http://localhost:3001/get').then((response) =>{
+            Axios.get('http://143.198.181.11:3001/get').then((response) =>{
               console.log(response.data)
               setBackendData(response.data)
             })
@@ -28,7 +28,7 @@ function Bar() {
         return {
             labels: backendData.map(time => time.time),
             datasets: [{
-                data: backendData.map(total => 30 - (total.total)),
+                data: backendData.map(total =>(total.total)),
                 label: "Empty parking spaces",
                 fill: true,
                 backgroundColor: "rgba(211,211,211,0.5)",

@@ -11,7 +11,7 @@ function Details() {
     const [backendData, setBackendData] = useState([{}])
 
     useEffect(() => {
-        Axios.get('http://localhost:3001/current').then((response) =>{
+        Axios.get('http://143.198.181.11:3001/current').then((response) =>{
         console.log(response)
         setBackendData(response.data)
         })
