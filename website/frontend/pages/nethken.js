@@ -8,10 +8,12 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function Details() {
+
     const [backendData, setBackendData] = useState([{}])
 
+
     useEffect(() => {
-        Axios.get('https://143.198.181.11:3001/current').then((response) =>{
+        Axios.get('http://143.198.181.11:3001/current').then((response) =>{
         console.log(response)
         setBackendData(response.data)
         }).catch((err) => {
