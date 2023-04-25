@@ -14,6 +14,8 @@ function Details() {
         Axios.get('http://143.198.181.11:3001/current').then((response) =>{
         console.log(response)
         setBackendData(response.data)
+        }).catch((err) => {
+            console.log(err)
         })
     }, [])
 
