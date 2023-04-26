@@ -13,7 +13,7 @@ function Details() {
 
 
     useEffect(() => {
-        fetch('http://143.198.181.11:3001/current')
+        fetch('http://138.197.227.235:3001/current')
         .then(response => response.json())
         .then(data => {
             setBackendData(data.total)
