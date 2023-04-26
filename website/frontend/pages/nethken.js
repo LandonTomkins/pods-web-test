@@ -13,13 +13,24 @@ function Details() {
 
 
     useEffect(() => {
-        Axios.get('http://localhost:3001/current').then((response) =>{
-        console.log(response)
-        setBackendData(response.data)
-        }).catch((err) => {
-            console.log(err)
-        })
-    }, [])
+        fetch('http://143.198.181.11:3001/current')
+        .then(response => response.json())
+        .then(data => {
+            setBackendData(data.total)
+            console.log(backendData)
+        });
+    }, []);
+
+
+
+    // useEffect(() => {
+    //     Axios.get('http://143.198.181.11:3001/get').then((response) =>{
+    //     console.log(response)
+    //     setBackendData(response.data)
+    //     }).catch((err) => {
+    //         console.log(err)
+    //     })
+    // }, [])
 
     const currentFacultyNum = backendData[0].CurrentSpacesFaculty + "/ 20"
     const currentStudentNum = backendData[0].CurrentSpacesStudent + "/ 30"
